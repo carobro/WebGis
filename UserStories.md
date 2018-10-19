@@ -13,7 +13,3 @@ Als Nutzer möchte ich ...
     - Die Story ist erfüllt wenn es mehr als ein Analyse Tool gibt
 - meine Daten speichern, damit ich sie wiederverwenden kann
     - Die Story ist erfüllt wenn die Daten gespeichert werden
-
-
-
-    tes efewjkfhoeq
