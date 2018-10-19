@@ -1,4 +1,4 @@
-#User Stories: Als (Rolle) möchte ich (Feature) damit ich (Nutzen) → Priorisieren
+# User Stories: Als (Rolle) möchte ich (Feature) damit ich (Nutzen) → Priorisieren
 
 Als Nutzer möchte ich ...
 - beim Starten des Programms möchte ich per "file-upload" meine Daten einladen können damit ich mit dieses Arbeiten kann 
