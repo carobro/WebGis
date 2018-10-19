@@ -13,4 +13,3 @@ Als Nutzer möchte ich ...
     - Die Story ist erfüllt
 - meine Daten speichern, damit ich sie wiederverwenden kann
     - Die Story ist erfüllt
-- Aysel
