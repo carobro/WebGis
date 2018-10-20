@@ -1,7 +1,6 @@
-Studienprojekt
-Supporting Usability
-Evaluation of WebGIS with
-Visual Analytics
+### Studienprojekt Bachelor Geoinformatik - Westfälische Wilhelms-Universität Münster    
+### Wintersemester 2018/2019    
+####Supporting Usability Evaluation of WebGIS with Visual Analytics
 
-Geoinformatik
-WS 2018/2019
+Beschreibung einfügen 
+
