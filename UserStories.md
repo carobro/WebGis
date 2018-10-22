@@ -73,6 +73,13 @@ Als Nutzer möchte ich über das Impressum die Entwickler bei Fragen / Problemen
 - Informationen der Entwickler, Firma u.ä. sind für jeden sichtbar.
 
 
+**Rollen** 
+
+Scrum Master: Carolin B.  
+Teammember:  
+Design: Anika G.  
+Entwicklung: Christin B.  
+Testen: Aysel T.
 
 
 
