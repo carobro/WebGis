@@ -16,10 +16,10 @@ Sie ist schätzbar. Sie hat also viel konkrete Details, dass ein erfahrenes Team
     
 **Small**    
 Sie hat die richtige Größe.     
-     
+
 **Testable**     
 Sie beinhaltet genügend Informationen, um getestet werden zu können.     
-     
+
 ### User Stories
 
 **Daten hochladen**
@@ -71,15 +71,3 @@ Als Nutzer möchte ich über das Impressum die Entwickler bei Fragen / Problemen
 
 *Akzeptanzkriterium:*  
 - Informationen der Entwickler, Firma u.ä. sind für jeden sichtbar.
-
-
-**Rollen** 
-
-Scrum Master: Carolin B.  
-Teammember:  
-Design: Anika G.  
-Entwicklung: Christin B.  
-Testen: Aysel T.
-
-
-
