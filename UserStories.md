@@ -20,7 +20,7 @@ Sie hat die richtige Größe.
 **Testable**     
 Sie beinhaltet genügend Informationen, um getestet werden zu können.     
 
-### User Stories
+## User Stories
 
 **Daten hochladen**
 
@@ -60,7 +60,7 @@ Als Nutzer möchte ich die Analysergebnisse auf dem Dashboard angezeigt bekommen
 **Startseite** 
 
 Als Nutzer möchte ich über eine Startseite meine Daten in ein Input-Feld übergeben können.
-Durch ein Submit Button schicke ich meine Daten an unser Dashboard, wo sie analysiert und ausgewertet werden.
+Durch ein Submit Button schicke ich meine Daten an ein Dashboard, wo sie analysiert und ausgewertet werden.
   
 *Akzeptanzkriterium:*  
 - Die Daten werden erkannt, erfasst und weitergegeben.
