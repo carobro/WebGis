@@ -48,6 +48,32 @@ Als Nutzer möchte ich meine Analyseergebnisse speichern können, um verschieden
 Als Nutzer möchte ich eine Auswahl an Analysetools haben, um die für meine Daten am besten geeignesten Analysen durchführen zu können. 
 
 *Akzeptanzkriterium:*    
-- Es gibt mehrere Schaltflächen für verschiedene Analysetools.    
+- Es gibt mehrere Schaltflächen für verschiedene Analysetools.  
+
+**Dashboard**     
+    
+Als Nutzer möchte ich die Analysergebnisse auf dem Dashboard angezeigt bekommen, um meine Ergebisse visuell nachvollziehen zu können. 
+    
+*Akzeptanzkriterium:*     
+- Es werden mehrere Ergebnisse in verschiedenen Darstellungen visualisiert.
+   
+**Startseite** 
+
+Als Nutzer möchte ich über eine Startseite meine Daten in ein Input-Feld übergeben können.
+Durch ein Submit Button schicke ich meine Daten an unser Dashboard, wo sie analysiert und ausgewertet werden.
+  
+*Akzeptanzkriterium:*  
+- Die Daten werden erkannt, erfasst und weitergegeben.
+
+**Impressum**
+
+Als Nutzer möchte ich über das Impressum die Entwickler bei Fragen / Problemen kontaktieren können. 
+
+*Akzeptanzkriterium:*  
+- Informationen der Entwickler, Firma u.ä. sind für jeden sichtbar.
+
+
+
+
 
 
