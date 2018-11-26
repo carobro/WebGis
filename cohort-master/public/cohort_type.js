@@ -6,7 +6,7 @@ import { Schemas, VisSchemasProvider } from 'ui/vis/editors/default/schemas';
 import { CohortVisualizationProvider } from './cohort_visualization';
 
 import './cohort.less';
-import optionsTemplate from './options_template.html';
+//import optionsTemplate from './options_template.html';
 
 export default function CohortTypeProvider(Private) {
   const VisFactory = Private(VisFactoryProvider);
@@ -21,6 +21,11 @@ export default function CohortTypeProvider(Private) {
     visualization: Private(CohortVisualizationProvider),
     visConfig: {
       defaults: {
+        index: 'user_study_5',
+        sessionField: 'session.keyword',
+        timeField: 'timestamp',
+        geoField: 'map_center',
+        scaleField: 'map_scale',
         percentual: false,
         inverse: false,
         cumulative: false,

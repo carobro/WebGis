@@ -1,0 +1,369 @@
+{
+  "took": 1,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 8911,
+    "max_score": 1,
+    "hits": [
+      {
+        "_index": "user_study_5",
+        "_type": "analytics",
+        "_id": "AWKzqiRgfYbpLmGov1-t",
+        "_score": 1,
+        "_source": {
+          "map_center": {
+            "x": 848532.8185717134,
+            "y": 6793348.235145803,
+            "spatialReference": {
+              "latestWkid": 3857,
+              "wkid": 102100
+            }
+          },
+          "session": "f895047b-818c-1c39-abb5-f4da4ca7d61d",
+          "tool_id": "task-finished-tool",
+          "map_scale": 36111.909643,
+          "event_timestamp": "2018-04-11T07:44:50.728Z",
+          "message": "Tool: task-finished-tool DISABLED",
+          "event_topic": "ct/tool/DISABLED/task-finished-tool",
+          "event_action": "Disabled",
+          "@timestamp": "2018-04-11T07:44:50.000Z",
+          "@version": "1",
+          "map_zoom": 14,
+          "bundle": "toolrules",
+          "app_id": "realestate_with_indicators",
+          "timestamp": 1523432690728
+        }
+      },
+      {
+        "_index": "user_study_5",
+        "_type": "analytics",
+        "_id": "AWKzqiRgfYbpLmGov1-z",
+        "_score": 1,
+        "_source": {
+          "map_center": {
+            "x": 848532.8185717134,
+            "y": 6793348.235145803,
+            "spatialReference": {
+              "latestWkid": 3857,
+              "wkid": 102100
+            }
+          },
+          "session": "f895047b-818c-1c39-abb5-f4da4ca7d61d",
+          "tool_id": "selectAllTool",
+          "map_scale": 36111.909643,
+          "event_timestamp": "2018-04-11T07:44:52.593Z",
+          "message": "Tool: selectAllTool ENABLED",
+          "event_topic": "ct/tool/ENABLED/selectAllTool",
+          "event_action": "Enabled",
+          "@timestamp": "2018-04-11T07:44:52.000Z",
+          "@version": "1",
+          "map_zoom": 14,
+          "bundle": "toolrules",
+          "app_id": "realestate_with_indicators",
+          "timestamp": 1523432692593
+        }
+      },
+      {
+        "_index": "user_study_5",
+        "_type": "analytics",
+        "_id": "AWKzqiRgfYbpLmGov1-y",
+        "_score": 1,
+        "_source": {
+          "map_center": {
+            "x": 848532.8185717134,
+            "y": 6793348.235145803,
+            "spatialReference": {
+              "latestWkid": 3857,
+              "wkid": 102100
+            }
+          },
+          "session": "f895047b-818c-1c39-abb5-f4da4ca7d61d",
+          "tool_id": "resultcenterToggleTool",
+          "map_scale": 36111.909643,
+          "event_timestamp": "2018-04-11T07:44:52.298Z",
+          "message": "Tool: resultcenterToggleTool SHOW",
+          "event_topic": "ct/tool/SHOW/resultcenterToggleTool",
+          "event_action": "Show",
+          "@timestamp": "2018-04-11T07:44:52.000Z",
+          "@version": "1",
+          "map_zoom": 14,
+          "event_name": "ResultCenterToggle",
+          "bundle": "toolrules",
+          "app_id": "realestate_with_indicators",
+          "timestamp": 1523432692298
+        }
+      },
+      {
+        "_index": "user_study_5",
+        "_type": "analytics",
+        "_id": "AWKzqqXafYbpLmGov1--",
+        "_score": 1,
+        "_source": {
+          "map_center": {
+            "x": 847921.3223454327,
+            "y": 6794714.547026395,
+            "spatialReference": {
+              "latestWkid": 3857,
+              "wkid": 102100
+            }
+          },
+          "@timestamp": "2018-04-11T07:45:24.000Z",
+          "mouseclick": {
+            "viewport": {
+              "width": 1890,
+              "height": 880
+            },
+            "uiElement": "Resultcenter-Item",
+            "x": 543,
+            "y": 704
+          },
+          "session": "f895047b-818c-1c39-abb5-f4da4ca7d61d",
+          "@version": "1",
+          "map_scale": 36111.909643,
+          "map_zoom": 14,
+          "event_timestamp": "2018-04-11T07:45:24.131Z",
+          "message": "mouseclick",
+          "app_id": "realestate_with_indicators",
+          "timestamp": 1523432724131
+        }
+      },
+      {
+        "_index": "user_study_5",
+        "_type": "analytics",
+        "_id": "AWKzqqXafYbpLmGov1-_",
+        "_score": 1,
+        "_source": {
+          "map_center": {
+            "x": 848188.8519444306,
+            "y": 6796654.1366191255,
+            "spatialReference": {
+              "latestWkid": 3857,
+              "wkid": 102100
+            }
+          },
+          "event_topic": "ct/map-init/CENTER_CHANGED",
+          "@timestamp": "2018-04-11T07:45:25.000Z",
+          "session": "f895047b-818c-1c39-abb5-f4da4ca7d61d",
+          "@version": "1",
+          "map_scale": 36111.909643,
+          "map_zoom": 14,
+          "event_timestamp": "2018-04-11T07:45:25.808Z",
+          "message": "map-init CENTER_CHANGED",
+          "bundle": "map-init",
+          "app_id": "realestate_with_indicators",
+          "timestamp": 1523432725808
+        }
+      },
+      {
+        "_index": "user_study_5",
+        "_type": "analytics",
+        "_id": "AWKzq0NifYbpLmGov1_U",
+        "_score": 1,
+        "_source": {
+          "map_center": {
+            "x": 848809.9027992473,
+            "y": 6790902.2502406975,
+            "spatialReference": {
+              "latestWkid": 3857,
+              "wkid": 102100
+            }
+          },
+          "@timestamp": "2018-04-11T07:46:04.000Z",
+          "mouseclick": {
+            "viewport": {
+              "width": 1890,
+              "height": 880
+            },
+            "uiElement": "Map",
+            "x": 1193,
+            "y": 317
+          },
+          "session": "f895047b-818c-1c39-abb5-f4da4ca7d61d",
+          "@version": "1",
+          "map_scale": 36111.909643,
+          "map_zoom": 14,
+          "event_timestamp": "2018-04-11T07:46:04.429Z",
+          "message": "mouseclick",
+          "app_id": "realestate_with_indicators",
+          "timestamp": 1523432764429
+        }
+      },
+      {
+        "_index": "user_study_5",
+        "_type": "analytics",
+        "_id": "AWKzq0NifYbpLmGov1_W",
+        "_score": 1,
+        "_source": {
+          "map_center": {
+            "x": 851647.6274743308,
+            "y": 6793271.798117531,
+            "spatialReference": {
+              "latestWkid": 3857,
+              "wkid": 102100
+            }
+          },
+          "event_topic": "ct/map-init/CENTER_CHANGED",
+          "@timestamp": "2018-04-11T07:46:05.000Z",
+          "session": "f895047b-818c-1c39-abb5-f4da4ca7d61d",
+          "@version": "1",
+          "map_scale": 36111.909643,
+          "map_zoom": 14,
+          "event_timestamp": "2018-04-11T07:46:05.743Z",
+          "message": "map-init CENTER_CHANGED",
+          "bundle": "map-init",
+          "app_id": "realestate_with_indicators",
+          "timestamp": 1523432765743
+        }
+      },
+      {
+        "_index": "user_study_5",
+        "_type": "analytics",
+        "_id": "AWKzq0NifYbpLmGov1_V",
+        "_score": 1,
+        "_source": {
+          "map_center": {
+            "x": 850434.1896503053,
+            "y": 6792173.015835934,
+            "spatialReference": {
+              "latestWkid": 3857,
+              "wkid": 102100
+            }
+          },
+          "@timestamp": "2018-04-11T07:46:05.000Z",
+          "mouseclick": {
+            "viewport": {
+              "width": 1890,
+              "height": 880
+            },
+            "uiElement": "Map",
+            "x": 1166,
+            "y": 342
+          },
+          "session": "f895047b-818c-1c39-abb5-f4da4ca7d61d",
+          "@version": "1",
+          "map_scale": 36111.909643,
+          "map_zoom": 14,
+          "event_timestamp": "2018-04-11T07:46:05.214Z",
+          "message": "mouseclick",
+          "app_id": "realestate_with_indicators",
+          "timestamp": 1523432765214
+        }
+      },
+      {
+        "_index": "user_study_5",
+        "_type": "analytics",
+        "_id": "AWKzqtzRfYbpLmGov1_G",
+        "_score": 1,
+        "_source": {
+          "map_center": {
+            "x": 848532.8185717136,
+            "y": 6794361.02577059,
+            "spatialReference": {
+              "latestWkid": 3857,
+              "wkid": 102100
+            }
+          },
+          "@timestamp": "2018-04-11T07:45:37.000Z",
+          "mouseclick": {
+            "viewport": {
+              "width": 1890,
+              "height": 880
+            },
+            "uiElement": "Map",
+            "x": 906,
+            "y": 415
+          },
+          "session": "f895047b-818c-1c39-abb5-f4da4ca7d61d",
+          "@version": "1",
+          "map_scale": 36111.909643,
+          "map_zoom": 14,
+          "event_timestamp": "2018-04-11T07:45:37.408Z",
+          "message": "mouseclick",
+          "app_id": "realestate_with_indicators",
+          "timestamp": 1523432737408
+        }
+      },
+      {
+        "_index": "user_study_5",
+        "_type": "analytics",
+        "_id": "AWKzqopKfYbpLmGov1-5",
+        "_score": 1,
+        "_source": {
+          "map_center": {
+            "x": 847921.3223454327,
+            "y": 6794714.547026395,
+            "spatialReference": {
+              "latestWkid": 3857,
+              "wkid": 102100
+            }
+          },
+          "event_topic": "ct/map-init/CENTER_CHANGED",
+          "@timestamp": "2018-04-11T07:45:16.000Z",
+          "session": "f895047b-818c-1c39-abb5-f4da4ca7d61d",
+          "@version": "1",
+          "map_scale": 36111.909643,
+          "map_zoom": 14,
+          "event_timestamp": "2018-04-11T07:45:16.649Z",
+          "message": "map-init CENTER_CHANGED",
+          "bundle": "map-init",
+          "app_id": "realestate_with_indicators",
+          "timestamp": 1523432716649
+        }
+      }
+    ]
+  },
+  "aggregations": {
+    "message_keyword": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 1381,
+      "buckets": [
+        {
+          "key": "mouseclick",
+          "doc_count": 2947
+        },
+        {
+          "key": "map-init CENTER_CHANGED",
+          "doc_count": 1967
+        },
+        {
+          "key": "resultcenter ITEM_SELECTED",
+          "doc_count": 1306
+        },
+        {
+          "key": "Tool: removeSelectedTool DISABLED",
+          "doc_count": 223
+        },
+        {
+          "key": "Tool: task-finished-tool DISABLED",
+          "doc_count": 223
+        },
+        {
+          "key": "Tool: removeSelectedTool ENABLED",
+          "doc_count": 217
+        },
+        {
+          "key": "Tool: task-finished-tool ENABLED",
+          "doc_count": 217
+        },
+        {
+          "key": "resultcenter PAGE_UPDATED",
+          "doc_count": 171
+        },
+        {
+          "key": "resultcenter SET_SELECTED",
+          "doc_count": 133
+        },
+        {
+          "key": "Framework  STARTED",
+          "doc_count": 126
+        }
+      ]
+    }
+  }
+}
