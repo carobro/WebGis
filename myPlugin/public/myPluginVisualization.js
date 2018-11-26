@@ -1,7 +1,6 @@
-/*import { loadCss, loadModules } from './libs/esri-loader';
+import { loadCss, loadModules } from './libs/esri-loader';
 
 const JS_API_URL = '//js.arcgis.com/4.8/';
-
 
 export default class myPluginVisualization {
   constructor(el, vis) {
@@ -103,4 +102,3 @@ export default class myPluginVisualization {
       });
   }
 }
-*/

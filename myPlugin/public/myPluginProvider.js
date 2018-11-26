@@ -9,7 +9,7 @@ import { CATEGORY } from 'ui/vis/vis_category';
 import { VisFactoryProvider } from 'ui/vis/vis_factory';
 import { VisTypesRegistryProvider } from 'ui/registry/vis_types';
 
-function SankeyProvider(Private) {
+function myPluginProvider(Private) {
   const VisFactory = Private(VisFactoryProvider);
   const requestHandler = Private(RequestHandlerProvider);
 
