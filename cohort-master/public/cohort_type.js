@@ -6,7 +6,7 @@ import { Schemas, VisSchemasProvider } from 'ui/vis/editors/default/schemas';
 import { CohortVisualizationProvider } from './cohort_visualization';
 
 import './cohort.less';
-//import optionsTemplate from './options_template.html';
+import optionsTemplate from './options_template.html'; // in leer aber kann man nicht löschen
 
 export default function CohortTypeProvider(Private) {
   const VisFactory = Private(VisFactoryProvider);
@@ -26,11 +26,10 @@ export default function CohortTypeProvider(Private) {
         timeField: 'timestamp',
         geoField: 'map_center',
         scaleField: 'map_scale',
-        percentual: false,
-        inverse: false,
-        cumulative: false,
-        table: false,
-        mapColors: 'heatmap',
+        actionField: 'message.keyword',
+        actionValue: 'map-init CENTER_CHANGED',
+        maxSessionLength: 100,
+        maxSessionCount: 100
       },
     },
     hierarchicalData: true,
@@ -44,7 +43,7 @@ export default function CohortTypeProvider(Private) {
           title: 'Total',
           max: 1,
           min: 1,
-          aggFilter: ['count', 'sum', 'avg'],
+          aggFilter: ['sum', 'avg'],
           defaults: [
             { type: 'count', schema: 'metric' },
           ],
