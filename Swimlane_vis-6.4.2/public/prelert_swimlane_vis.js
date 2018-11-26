@@ -25,18 +25,13 @@ function PrelertSwimlaneProvider(Private) {
     category: CATEGORY.OTHER,
     visConfig: {
       defaults: {
-        interval: { display: 'Auto', val: 'auto' },
-        thresholdBands: [
-          { value: 0, color: '#d2e9f7' },
-          { value: 3, color: '#8bc8fb' },
-          { value: 25, color: '#ffdd00' },
-          { value: 50, color: '#ff7e00' },
-          { value: 75, color: '#fe5050' }
-        ],
-        unknownThresholdColor: '#e6e6e6',
-        tooltipNumberFormat: '0.0',
-        showLegend: true,
-        alphabetSortLaneLabels: 'off'
+        index: 'user_study_5',
+        sessionField: 'session.keyword',
+        timeField: 'timestamp',
+        geoField: 'map_center',
+        scaleField: 'map_scale',
+        actionField: 'message.keyword',
+        actionValue: 'map-init CENTER_CHANGED'
       },
       template,
       intervalOptions: [
