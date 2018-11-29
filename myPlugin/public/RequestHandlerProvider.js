@@ -1,12 +1,13 @@
 const getRequestBody = (params, queryFilter, timeFilter) => {
     const requestBody = {
-      'size': params.maxEventCount, //0
+      /* MUSS ANGEPASST WERDEN */
+      'size': params.maxEventCount, 
       'query': {
         'bool': {
           'must': [
             {
-              'term': { //prüfen
-                [params.actionField]: params.actionValue//prüfen
+              'term': { 
+                [params.actionField]: params.actionValue
               }
             },
             {
@@ -33,11 +34,11 @@ const getRequestBody = (params, queryFilter, timeFilter) => {
                   {
                     [params.timeField]: {
                       "order": "asc",
-                      "unmapped_type": "long" //prüfen
+                      "unmapped_type": "long" 
                     }
                   }
                 ],
-                '_source': { //FieldsPrüfen
+                '_source': { 
                   'includes': [params.timeField, params.geoField, params.scaleField, params.timeField]
                 },
                 'size': params.maxSessionLength
@@ -133,7 +134,7 @@ const getRequestBody = (params, queryFilter, timeFilter) => {
           const params = vis.params;
           const requestBody = getRequestBody(params, queryFilter, timeFilter.getTime());
           es.search({
-            index: params.index, //prüfen
+            index: params.index, 
             body: requestBody
           }).then(result => resolve(result));
         });

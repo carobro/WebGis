@@ -1,5 +1,4 @@
-/*import './style.css';
-import optionsTemplate from './options_template.html';
+/*IMPORTS MÜSSEN ANGEPASST WERDEN;
 */
 import SankeyVisualization from './myPluginVisualization';
 import { RequestHandlerProvider } from './RequestHandlerProvider';
@@ -27,12 +26,7 @@ function myPluginProvider(Private) {
           index: 'user_study_5',
           sessionField: 'session.keyword',
           timeField: 'timestamp',
-          geoField: 'map_center',
-          scaleField: 'map_scale',
-          actionField: 'message.keyword',
-          actionValue: 'map-init CENTER_CHANGED',
-          maxSessionLength: 100,
-          maxSessionCount: 100
+          geoField: 'map_center'
         },
     },
     editorConfig: {

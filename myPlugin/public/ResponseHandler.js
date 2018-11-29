@@ -1,6 +1,6 @@
 /*Datei anders
 
-import ElasticSankeyTransformer from './SessionToSankeyTransformer';
+import myPluginTransformer from './SessionToSankeyTransformer';
 import { transformElasticResponseToSessions, filterSource, filterDestination } from './ElasticToSessionTransformer';
 
 export function handleResponse(vis, response) {
