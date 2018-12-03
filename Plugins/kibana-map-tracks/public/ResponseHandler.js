@@ -6,6 +6,7 @@ export function handleResponse(vis, response) {
           x: event._source[vis.params.geoField].x,
           y: event._source[vis.params.geoField].y
         },
+        scale: event._source[vis.params.scaleField],
         timestamp: event._source[vis.params.timeField]
       };
     });

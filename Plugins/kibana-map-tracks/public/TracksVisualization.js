@@ -81,7 +81,7 @@ export default class TracksVisualization {
 
           let lineSymbol = {
             type: "simple-line",
-            color: [226, 119, 40],
+            color: [151, 255, 255],
             width: 2
           };
 

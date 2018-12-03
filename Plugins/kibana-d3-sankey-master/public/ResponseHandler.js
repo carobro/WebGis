@@ -1,6 +1,4 @@
-/*Datei anders
-
-import myPluginTransformer from './SessionToSankeyTransformer';
+import ElasticSankeyTransformer from './SessionToSankeyTransformer';
 import { transformElasticResponseToSessions, filterSource, filterDestination } from './ElasticToSessionTransformer';
 
 export function handleResponse(vis, response) {
@@ -23,4 +21,4 @@ export function handleResponse(vis, response) {
     nodes: transformer.nodes,
     links: transformer.links
   };
-}*/
+}

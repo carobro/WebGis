@@ -1,6 +1,6 @@
-/*IMPORTS MÜSSEN ANGEPASST WERDEN;
-*/
-import SankeyVisualization from './myPluginVisualization';
+import './style.css';
+import optionsTemplate from './options_template.html';
+import SankeyVisualization from './SankeyVisualization';
 import { RequestHandlerProvider } from './RequestHandlerProvider';
 import { handleResponse } from './ResponseHandler';
 
@@ -8,26 +8,28 @@ import { CATEGORY } from 'ui/vis/vis_category';
 import { VisFactoryProvider } from 'ui/vis/vis_factory';
 import { VisTypesRegistryProvider } from 'ui/registry/vis_types';
 
-function myPluginProvider(Private) {
+function SankeyProvider(Private) {
   const VisFactory = Private(VisFactoryProvider);
   const requestHandler = Private(RequestHandlerProvider);
 
   return VisFactory.createBaseVisualization({
-    name: 'myPlugin',
-    title: 'myPlugin',
+    name: 'sankey',
+    title: 'Sankey',
     icon: 'fa fa-area-chart',
-    description: 'my Plugin',
+    description: 'Sankey Diagram',
     category: CATEGORY.OTHER,
-    visualization: myPluginVisualization,
+    visualization: SankeyVisualization,
     responseHandler: handleResponse,
     requestHandler: requestHandler.handle,
     visConfig: {
-        defaults: {  //ggf. anpassen
-          index: 'user_study_5',
-          sessionField: 'session.keyword',
-          timeField: 'timestamp',
-          geoField: 'map_center'
-        },
+      defaults: {
+        sessionField: 'session_id.keyword',
+        actionField: 'topic',
+        timeField: 'timestamp',
+        maxSessionCount: 100,
+        maxSessionLength: 30,
+        filterPosition: 'source',
+      },
     },
     editorConfig: {
       optionsTemplate: optionsTemplate
@@ -35,4 +37,4 @@ function myPluginProvider(Private) {
   });
 }
 
-VisTypesRegistryProvider.register(myPluginProvider);
+VisTypesRegistryProvider.register(SankeyProvider);
