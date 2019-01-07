@@ -16,7 +16,7 @@
   - Als Nutzer möchte ich eine Timeline haben, die die Startzeit und den Zeitpunkt des Exportes der ausgewählten Grundstücke/Hotels anzeigt, um Unterschiede in der Geschwindigkeit der durchgeführten Nutzerstudien zu sehen (mit und ohne Indikatoren). 
 
 
-#Sprintplanung (ab dem 07.12.2018)
+## Sprintplanung (ab dem 07.12.2018)
 **Scrum Master für die nächsten zwei Wochen:**
 
  - Anika Graupner
@@ -40,7 +40,7 @@ Dotplot
 
 - Als Nutzer möchte ich ein Visualisierungstool mit einer Karte haben, um die Nutzer- Interaktionen auf der Karte sehen zu können, z.B. wo auf der Karte geklickt worden ist.
 
-**Sprint / nächste Schritte (16.11.08 - 07.12.18)**
+## Sprint / nächste Schritte (16.11.08 - 07.12.18)
 
 - begonnene Plugins fertigstellen 
   - Dotplot
@@ -69,4 +69,4 @@ in der Scriptdatei)
 - wir würden gerne noch einmal den Aufbau der erfassten Daten besprechen
  - z.B. was bedeuten die einzelnen “messages”, was zählt als Mausklick, was
 nicht
-3
+

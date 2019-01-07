@@ -32,7 +32,7 @@
 - grobe Struktur der Index, package.json, steht
 - erste Libraries gefunden 
 
-**Sprint / nächste Schritte (16.11.08 - 07.12.18)**
+## Sprint / nächste Schritte (16.11.08 - 07.12.18)
 
 - erste Plugins erstellen
   - Jedes der Gruppenmitglieder sucht sich (hat sich ausgesucht) eine eigene Visualisierungart aus:

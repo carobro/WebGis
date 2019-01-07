@@ -1,4 +1,4 @@
-#Supporting Usability Evaluation of WebGIS with Visual Analytics    
+# Supporting Usability Evaluation of WebGIS with Visual Analytics    
 ## User Stories 
 
 **Verschiedene Analysetools**
@@ -45,7 +45,7 @@
 - begonnene Plugins fertigstellen 
   - Dotplot
 
-**Sprint / nächste Schritte (21.12.08 - 11.01.19)**
+## Sprint / nächste Schritte (21.12.08 - 11.01.19)
 
 - begonnene Plugins beenden:
   - Stack-Chart
