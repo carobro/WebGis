@@ -1,1 +1,0 @@
-# Sortierung was selber inpementiert werden muss, was übernommen werden kann
