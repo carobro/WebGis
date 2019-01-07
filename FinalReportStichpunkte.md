@@ -28,7 +28,8 @@ Jede Woche haben wir unseren Scrum Master getauscht, das bedeutet, dass jeder vo
 5. Average-Zoom-Level
 
 ## Kurze Anleitung für die Inbetriebnahme
-Nach der Installation von Kibana und dem hinzufügen von elasticsearch.url: „http://giv-project16.uni-muenster.de:80“ in der kibana.yml, ist unser fertiges Dashboard unter UEWVA18 Dashboard zu finden. Die ergänzenden Plugins sind auf GitHub unter https://github.com/carobro/UEWVA18/tree/master/Plugins zu finden. Diese müssen vor dem Kibana Start in den Plugins Ordner geschoben werden. Danach sind sie auch in der Anwendung sichtbar
+Nach der Installation von Kibana und dem hinzufügen von 
+`elasticsearch.url: „http://giv-project16.uni-muenster.de:80“` in der kibana.yml, ist unser fertiges Dashboard unter UEWVA18 Dashboard zu finden. Die ergänzenden Plugins sind auf GitHub unter `https://github.com/carobro/UEWVA18/tree/master/Plugins` zu finden. Diese müssen vor dem Kibana Start in den Plugins Ordner geschoben werden. Danach sind sie auch in der Anwendung sichtbar
 
 ## Aufteilung der Teammitglieder
 Zu beginn haben wir alle allein im Internet geschaut, welche Tutorials etc. für uns in Frage kommen würden. Nachdem wir ein paar Beispiel Plugins gefunden haben, haben wir versucht Ähnlichkeiten zu erkennen und uns sie gegenseitig vorgestellt. Jedem Gruppenmitglied wurde dann jeweils ein Plugin Typ zugeordnet. Dieser wurde dann eine Art Experte und hat versucht das Plugin anzupassen. Bei Problemen wurde gemeinsam auf das Plugin bei unseren Sitzungen geschaut. Die Sprints hat der jeweilige Scrum Master der Woche mit Hilfe der anderen Mitglieder erstellt und diese dann auch abgeschickt
