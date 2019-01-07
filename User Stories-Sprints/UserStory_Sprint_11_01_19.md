@@ -46,6 +46,6 @@
 
 - begonnene Plugins beenden:
   - Stack-Chart
-  - Timelines mit Start und Ende kombiniert
-- Punktdichtekarte erstellen für Item_Selected. Also in welchem MapCenter sich der Nutzer befand, als er ein Grundstück oder Hotel gewählt hat.
+  - Timeline mit Start und Ende kombiniert
+  - Punktdichtekarte erstellen für Item_Selected. Also in welchem MapCenter sich der Nutzer befand, als er ein Grundstück oder Hotel gewählt hat.
 - Distanzfunktion “common route”- Implementierung (auf Kartenansicht)
