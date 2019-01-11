@@ -62,7 +62,7 @@ export default class TracksVisualization {
             camera: {
               heading: 0,
               tilt: 0,
-              position: [7.62571, 51.366, 50000]
+              position: [7.6261347, 51.9606649, 20000]
             },
             container: this.container,
             ui: { components: ['compass'] }
