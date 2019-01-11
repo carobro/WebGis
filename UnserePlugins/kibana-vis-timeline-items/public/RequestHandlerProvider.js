@@ -6,7 +6,7 @@ const getRequestBody = (params, queryFilter, timeFilter) => {
         'must': [
           {
             'term': {
-              'message.keyword': 'resultcenter ITEM_SELECTED' 
+              'message.keyword': 'message.keyword' 
             }
           },
           {
