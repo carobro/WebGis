@@ -1,0 +1,52 @@
+{
+  "name": "cohort",
+  "version": "6.3.2",
+  "description": "Cohort Analysis plugin built with love at Elo7",
+  "main": "index.js",
+  "kibana": {
+    "version": "kibana"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elo7/cohort.git"
+  },
+  "keywords": [
+    "cohort",
+    "kibana",
+    "plugin",
+    "visualization"
+  ],
+  "homepage": "https://github.com/elo7/cohort",
+  "bugs": {
+    "url": "https://github.com/elo7/cohort/issues"
+  },
+  "license": "",
+  "author": "Mike Dias <mike.rodrigues.dias@gmail.com>",
+  "contributors": [],
+  "scripts": {
+    "lint": "eslint",
+    "start": "plugin-helpers start",
+    "test:server": "plugin-helpers test:server",
+    "test:browser": "plugin-helpers test:browser",
+    "build": "plugin-helpers build",
+    "postinstall": "plugin-helpers postinstall"
+  },
+  "devDependencies": {
+    "@elastic/eslint-config-kibana": "^0.15.0",
+    "@elastic/eslint-import-resolver-kibana": "^2.0.0",
+    "@elastic/plugin-helpers": "^7.1.0",
+    "babel-eslint": "^8.1.2",
+    "chai": "^4.1.2",
+    "eslint": "^4.14.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-mocha": "^4.11.0",
+    "eslint-plugin-prefer-object-spread": "^1.2.1",
+    "eslint-plugin-react": "^7.5.1",
+    "publish-release": "1.6.0",
+    "release-it": "7.5.1"
+  },
+  "engines": {
+    "yarn": "^1.6.0"
+  }
+}
