@@ -5,11 +5,6 @@ const getRequestBody = (params, queryFilter, timeFilter) => {
       'bool': {
         'must': [
           {
-            'term': {
-              'message.keyword': 'message.keyword' 
-            }
-          },
-          {
             'range': {
               '@timestamp': {
                 'gte': timeFilter.from,

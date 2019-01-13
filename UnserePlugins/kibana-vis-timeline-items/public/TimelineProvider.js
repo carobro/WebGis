@@ -23,10 +23,10 @@ function TimelineProvider(Private) {
     visConfig: {
       defaults: {
         sessionField: 'session.keyword',
-        actionField: 'message.keyword',
+        actionField: 'message',
         timeField: 'timestamp',
         maxSessionCount: 7,
-        maxSessionLength: 20,
+        maxSessionLength: 100,
         index: 'user_study_5'
       },
     },

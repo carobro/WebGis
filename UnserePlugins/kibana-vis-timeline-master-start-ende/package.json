@@ -1,7 +1,0 @@
-{
-  "name": "startende",
-  "version": "kibana",
-  "dependencies": {
-    "vis": "^4.21.0"
-  }
-}
