@@ -5,6 +5,12 @@ const getRequestBody = (params, queryFilter, timeFilter) => {
       'bool': {
         'must': [
           {
+            'term': {
+              'message.keyword':'usagelog_task STARTED',
+              'message.keyword':'usagelog_task FINISHED'
+            }
+          },
+          {
             'range': {
               '@timestamp': {
                 'gte': timeFilter.from,
