@@ -3,21 +3,17 @@ const getRequestBody = (params, queryFilter, timeFilter) => {
     'size': 0,
     'query': {
       'bool': {
-        'must': [
+        'should': [
           {
             'term': {
-              'message.keyword':'usagelog_task STARTED',
-              'message.keyword':'usagelog_task FINISHED'
+              'message.keyword':'usagelog_task STARTED'
             }
           },
           {
-            'range': {
-              '@timestamp': {
-                'gte': timeFilter.from,
-                'lte': timeFilter.to
-              }
-            }
-          }
+            'term':{
+              'message.keyword':'usagelog_task FINISHED'
+            } 
+          },
         ]
       }
     },

@@ -23,9 +23,9 @@ function StartendeProvider(Private) {
     visConfig: {
       defaults: {
         sessionField: 'session.keyword',
-        actionField: 'Framework STARTED',
+        actionField: 'message.keyword',
         timeField: 'timestamp',
-        maxSessionCount: 7,
+        maxSessionCount: 10,
         maxSessionLength: 20,
         index: 'user_study_5'
       },
