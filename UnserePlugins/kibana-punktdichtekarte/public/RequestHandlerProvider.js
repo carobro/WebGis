@@ -1,20 +1,22 @@
 const getRequestBody = (params, queryFilter, timeFilter) => {
   const requestBody = {
-    'size': 0,
+    'size': params.maxEventCount,
     'query': {
       'bool': {
-        'minimum_should_match': 1,
-        'should': [
+        'must': [
           {
             'term': {
-              'message.keyword':'usagelog_task STARTED'
+              [params.actionField]: params.actionValue
             }
           },
           {
-            'term':{
-              'message.keyword':'usagelog_task FINISHED'
-            } 
-          },
+            'range': {
+              '@timestamp': {
+                'gte': timeFilter.from,
+                'lte': timeFilter.to
+              }
+            }
+          }
         ]
       }
     },
@@ -25,17 +27,18 @@ const getRequestBody = (params, queryFilter, timeFilter) => {
           'size': params.maxSessionCount
         },
         'aggs': {
-          'first_events': {
+          'events': {
             'top_hits': {
               'sort': [
                 {
                   [params.timeField]: {
-                    'order': 'asc'
+                    "order": "asc",
+                    "unmapped_type": "long"
                   }
                 }
               ],
               '_source': {
-                'includes': [params.actionField, params.timeField]
+                'includes': [params.timeField, params.geoField, params.scaleField, params.timeField]
               },
               'size': params.maxSessionLength
             }
@@ -44,6 +47,9 @@ const getRequestBody = (params, queryFilter, timeFilter) => {
       }
     }
   };
+
+  //console.log(requestBody);
+
   const queries = queryFilter.getFilters();
   if (queries && queries.length) {
     queries.forEach(({ meta }) => {
@@ -86,15 +92,17 @@ const getRequestBody = (params, queryFilter, timeFilter) => {
       }
     });
   }
+  //console.log(requestBody);
   return requestBody;
 };
 
 function addMustQuery(request, query, { negate }) {
+  const boolObject = request.query.bool;
   let matcher;
   if (negate) {
-    matcher = request.query.bool.must_not ? request.query.bool.must_not : (request.query.bool.must_not = []);
+    matcher = boolObject.must_not ? boolObject.must_not : (boolObject.must_not = []);
   } else {
-    matcher = request.query.bool.must ? request.query.bool.must : (request.query.bool.must = []);
+    matcher = boolObject.must ? boolObject.must : (boolObject.must = []);
   }
   matcher.push(query);
 }

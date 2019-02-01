@@ -1,5 +1,5 @@
 import optionsTemplate from './options_template.html';
-import StartendeVisualization from './StartendeVisualization';
+import TracksVisualization from './TracksVisualization';
 import { RequestHandlerProvider } from './RequestHandlerProvider';
 import { handleResponse } from './ResponseHandler';
 
@@ -7,27 +7,31 @@ import { CATEGORY } from 'ui/vis/vis_category';
 import { VisFactoryProvider } from 'ui/vis/vis_factory';
 import { VisTypesRegistryProvider } from 'ui/registry/vis_types';
 
-function StartendeProvider(Private) {
+function TracksProvider(Private) {
   const VisFactory = Private(VisFactoryProvider);
   const requestHandler = Private(RequestHandlerProvider);
 
   return VisFactory.createBaseVisualization({
-    name: 'startende',
-    title: 'Started-Finished',
-    icon: 'fa fa-line-chart',
-    description: 'startende',
+    name: 'esri-Tracks',
+    title: 'Esri Tracks',
+    icon: 'fa fa-map',
+    description: 'Esri Tracks',
     category: CATEGORY.OTHER,
-    visualization: StartendeVisualization,
+    visualization: TracksVisualization,
     responseHandler: handleResponse,
     requestHandler: requestHandler.handle,
     visConfig: {
       defaults: {
+        appField: 'app_id',
+        index: 'user_study_5',
         sessionField: 'session.keyword',
-        actionField: 'message',
         timeField: 'timestamp',
-        maxSessionCount: 10,
-        maxSessionLength: 20,
-        index: 'user_study_5'
+        geoField: 'map_center',
+        scaleField: 'map_scale',
+        actionField: 'message.keyword',
+        actionValue: 'map-init CENTER_CHANGED',
+        maxSessionLength: 100,
+        maxSessionCount: 100
       },
     },
     editorConfig: {
@@ -36,4 +40,4 @@ function StartendeProvider(Private) {
   });
 }
 
-VisTypesRegistryProvider.register(StartendeProvider);
+VisTypesRegistryProvider.register(TracksProvider);
