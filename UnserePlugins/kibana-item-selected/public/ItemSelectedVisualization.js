@@ -1,5 +1,5 @@
 import './libs/vis.css';
-import './ItemSelected-colors.css';
+import './ItemSelected.css';
 import vis from './libs/vis';
 
 const OPTIONS = {
