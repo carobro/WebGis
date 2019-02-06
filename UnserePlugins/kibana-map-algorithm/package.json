@@ -1,0 +1,7 @@
+{
+  "name": "algorithm",
+  "version": "kibana",
+  "dependencies": {
+    "esri-loader": "^2.3.0"
+  }
+}
