@@ -8,7 +8,7 @@ export function handleResponse(kibana, response) {
       sessionKey: session.key,
       events: events.map(event => {
         return {
-          name: event._source["message"],
+          name: event._source[kibana.params.actionField],
           time: event._source[kibana.params.timeField]
         };
       })

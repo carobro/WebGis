@@ -3,7 +3,6 @@ const getRequestBody = (params, queryFilter, timeFilter) => {
     'size': 0,
     'query': {
       'bool': {
-        'minimum_should_match': 1,
         'should': [
           {
             'term': {
@@ -94,7 +93,7 @@ function addMustQuery(request, query, { negate }) {
   if (negate) {
     matcher = request.query.bool.must_not ? request.query.bool.must_not : (request.query.bool.must_not = []);
   } else {
-    matcher = request.query.bool.must ? request.query.bool.must : (request.query.bool.must = []);
+    matcher = request.query.bool.must;
   }
   matcher.push(query);
 }

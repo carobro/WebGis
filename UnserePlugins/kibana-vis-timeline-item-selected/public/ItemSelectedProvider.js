@@ -1,5 +1,5 @@
 import optionsTemplate from './options_template.html';
-import StartendeVisualization from './StartendeVisualization';
+import ItemSelectedVisualization from './ItemSelectedVisualization';
 import { RequestHandlerProvider } from './RequestHandlerProvider';
 import { handleResponse } from './ResponseHandler';
 
@@ -7,23 +7,23 @@ import { CATEGORY } from 'ui/vis/vis_category';
 import { VisFactoryProvider } from 'ui/vis/vis_factory';
 import { VisTypesRegistryProvider } from 'ui/registry/vis_types';
 
-function StartendeProvider(Private) {
+function ItemSelectedProvider(Private) {
   const VisFactory = Private(VisFactoryProvider);
   const requestHandler = Private(RequestHandlerProvider);
 
   return VisFactory.createBaseVisualization({
-    name: 'startende',
-    title: 'Started-Finished',
+    name: 'itemSelected',
+    title: 'Item-Selected',
     icon: 'fa fa-line-chart',
-    description: 'startende',
+    description: 'itemSelected',
     category: CATEGORY.OTHER,
-    visualization: StartendeVisualization,
+    visualization: ItemSelectedVisualization,
     responseHandler: handleResponse,
     requestHandler: requestHandler.handle,
     visConfig: {
       defaults: {
         sessionField: 'session.keyword',
-        actionField: 'message',
+        actionField: 'message.keyword',
         timeField: 'timestamp',
         maxSessionCount: 10,
         maxSessionLength: 20,
@@ -36,4 +36,4 @@ function StartendeProvider(Private) {
   });
 }
 
-VisTypesRegistryProvider.register(StartendeProvider);
+VisTypesRegistryProvider.register(ItemSelectedProvider);
