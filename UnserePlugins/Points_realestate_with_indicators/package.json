@@ -1,5 +1,5 @@
 {
-  "name": "tracks",
+  "name": "points_realestate_with_indicators",
   "version": "kibana",
   "dependencies": {
     "esri-loader": "^2.3.0"

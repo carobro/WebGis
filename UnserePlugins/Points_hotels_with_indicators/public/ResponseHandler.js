@@ -12,13 +12,9 @@ export function handleResponse(vis, response) {
 
   //console.log(b);
 
-  b.forEach(function(element){
-
-    if(element._source.message = "resultcenter ITEM_SELECTED"){
+  b.forEach(function(element){ //nicht mehr viel
 
       coordarray.push([element._source.map_center.x, element._source.map_center.y]);
-
-    }
 
   });
   

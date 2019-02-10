@@ -1,14 +1,17 @@
 const getRequestBody = (params, queryFilter, timeFilter) => {
   const requestBody = {
-    'size': params.maxEventCount,
+    'size': 1000,
     'query': {
       'bool': {
         'must': [
           {
             'term': {
               [params.actionField]: params.actionValue
-            }
-          },
+            }},
+            {
+            'term': {
+              [params.appField]: params.appValue
+            }},
           {
             'range': {
               '@timestamp': {
@@ -19,38 +22,12 @@ const getRequestBody = (params, queryFilter, timeFilter) => {
           }
         ]
       }
-    },
-    'aggs': {
-      'sessions': {
-        'terms': {
-          'field': params.sessionField,
-          'size': params.maxSessionCount
-        },
-        'aggs': {
-          'events': {
-            'top_hits': {
-              'sort': [
-                {
-                  [params.timeField]: {
-                    "order": "asc",
-                    "unmapped_type": "long"
-                  }
-                }
-              ],
-              '_source': {
-                'includes': [params.timeField, params.geoField, params.scaleField, params.timeField]
-              },
-              'size': params.maxSessionLength
-            }
-          }
-        }
-      }
     }
   };
 
   //console.log(requestBody);
 
-  const queries = queryFilter.getFilters();
+  const queries = queryFilter.getFilters(); // Filter auf dem Dashboard
   if (queries && queries.length) {
     queries.forEach(({ meta }) => {
       if (meta.disabled) return;

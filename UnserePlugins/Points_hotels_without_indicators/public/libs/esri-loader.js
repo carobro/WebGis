@@ -112,7 +112,7 @@ export function loadScript(options) {
                     // set dojo configuration parameters before loading the script
                     window['dojoConfig'] = options.dojoConfig;
                 }
-                // create a script object whose source points to the API
+                // create a script object whose source points_hotels_without_indicators to the API
                 script = createScript(options.url);
                 _currentUrl = options.url;
                 // once the script is loaded...

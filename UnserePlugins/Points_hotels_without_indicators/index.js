@@ -2,7 +2,7 @@ export default function (kibana) {
   return new kibana.Plugin({
     uiExports: {
       visTypes: [
-        'plugins/tracks/TracksProvider'
+        'plugins/points_hotels_without_indicators/Points_hotels_without_indicatorsProvider'
       ]
     }
   });
