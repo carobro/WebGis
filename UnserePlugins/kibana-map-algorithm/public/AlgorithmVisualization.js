@@ -71,48 +71,61 @@ export default class TracksVisualization {
         } else {
           this.map.remove(this.graphicsLayer);
         }
-          let lineSymbol = {
-            type: "simple-line",
+
+          var pointsymbol = {
+            type: "simple-point",
             color: [151, 255, 255],
-            width: 2
           };
 
-          return new Graphic({
-            geometry: polyline,
-            symbol: lineSymbol
+          this.graphicsLayer = new GraphicsLayer();
+          var Graphicpoint = new Graphic({
+            geometry: point,
+            symbol: pointsymbol
           });
-        })
-        // Algorithmus
-        while(i <= mouseclick.length && Q.length){
-          d = Point.distance(P[i+1], Q[j]);
-          while(i+1 <= P.length && Point.distance(P[i+1], Q[j]) < d){
-            pen = pen + Point.distance(P[i], P[i+1])
-            j = j+1;
-            d = Point.distance(P[i], Q[j]);
-           }
-          dist = dist + d;
-          n = n +1;
-          if((dist/n) > D){
-            return D*2;
-          }
-          pen = pen - (D - d);
-         i = i+ 1; j = j+1;
-        }
-        dist = dist / n;
-        while(i <= P.length){
-          pen = pen + Point.distance(P[i-1], P[i])
-        }
-        while(j <= Q.length){
-          pen = pen + Point.distance(Q[j-1], Q[j])
-        }
-        return dist + pen;
-      })
-      this.graphicsLayer = new GraphicsLayer();
-      this.graphicsLayer.addMany(graphicTracks);
-      this.map.add(this.graphicsLayer);
+          this.graphicsLayer = new GraphicsLayer();
+          this.graphicsLayer.add(Graphicpoint);
+          this.map.add(this.graphicsLayer);
+        
+            // Algorithmus
+            dist = 0; // distance
+            pen = 0; // penalty
+            i = 1; // indice of points in P
+            j = 1; // indice of points in Q
+            P = event.mouseclick.x;
+            Q = event.mouseclick.y;
+            while(i <= P.length && j <= Q.length){
+              d = Point.distance(P[i+1], Q[j]);
+              while(i+1 <= P.length && Point.distance(P[i+1], Q[j]) < d){
+                pen = pen + Point.distance(P[i], P[i+1])
+                i = i+1;
+                d = Point.distance(P[i], Q[j]);
+              }
+              while(j+1 <= Q.length && Point.distance(P[i], Q[j+1]) < d){
+                pen = pen + Point.distance(Q[j], Q[j+1]);
+                j = j+1; 
+                d = Point.distance(P[i], Q[j]);
+              } 
+              dist = dist + d;
+              n = n + 1;
+              if((dist/n) > D){ // Woher bekomme ich die Distance threshold D?
+                return D*2;
+              }
+              pen = pen - (D - d);
+              i = i + 1; 
+              j = j + 1;
+            }
+            dist = dist / n;
+            while(i <= P.length){
+              pen = pen + Point.distance(P[i-1], P[i])
+            }
+            while(j <= Q.length){
+              pen = pen + Point.distance(Q[j-1], Q[j])
+            }
+            return dist + pen;
 
-      .catch(err => {
-        console.error(err);
-      });
+        }) // hier muss then zu ")"
+        .catch(err => {
+          console.error(err);
+        });
+    }
   }
-}

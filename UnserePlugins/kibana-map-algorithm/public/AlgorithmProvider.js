@@ -26,7 +26,7 @@ function AlgorithmProvider(Private) {
         sessionField: 'session.keyword',
         timeField: 'timestamp',
         geoField: 'map_center',
-        scaleField: 'map_scale',
+        scaleField: 'mouseclick.x',
         actionField: 'message.keyword',
         actionValue: 'map-init CENTER_CHANGED',
         maxSessionLength: 100,
