@@ -1,0 +1,7 @@
+{
+  "name": "timeline_hotels_without_indicators",
+  "version": "kibana",
+  "dependencies": {
+    "vis": "^4.21.0"
+  }
+}

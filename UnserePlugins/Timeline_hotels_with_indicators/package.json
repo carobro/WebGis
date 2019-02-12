@@ -1,5 +1,5 @@
 {
-  "name": "itemselected",
+  "name": "timeline_hotels_with_indicators",
   "version": "kibana",
   "dependencies": {
     "vis": "^4.21.0"

@@ -1,5 +1,5 @@
 import optionsTemplate from './options_template.html';
-import ItemSelectedVisualization from './ItemSelectedVisualization';
+import Timeline_hotels_with_indicators_Visualization from './Timeline_hotels_with_indicators_Visualization';
 import { RequestHandlerProvider } from './RequestHandlerProvider';
 import { handleResponse } from './ResponseHandlerProvider';
 
@@ -7,17 +7,17 @@ import { CATEGORY } from 'ui/vis/vis_category';
 import { VisFactoryProvider } from 'ui/vis/vis_factory';
 import { VisTypesRegistryProvider } from 'ui/registry/vis_types';
 
-function ItemSelectedProvider(Private) {
+function Timeline_hotels_with_indicators_Provider(Private) {
   const VisFactory = Private(VisFactoryProvider);
   const requestHandler = Private(RequestHandlerProvider);
 
   return VisFactory.createBaseVisualization({
-    name: 'itemselected',
-    title: 'Item Selected',
-    icon: 'fa fa-line-chart',
-    description: 'itemselected',
+    name: 'Timeline_hotels_with_indicators',
+    title: 'Timeline_hotels_with_indicators',
+    icon: 'fa fa-clock-o',
+    description: 'Timeline_hotels_with_indicators',
     category: CATEGORY.OTHER,
-    visualization: ItemSelectedVisualization,
+    visualization: Timeline_hotels_with_indicators_Visualization,
     responseHandler: handleResponse,
     requestHandler: requestHandler.handle,
     visConfig: {
@@ -35,4 +35,4 @@ function ItemSelectedProvider(Private) {
     }
   });
 }
-VisTypesRegistryProvider.register(ItemSelectedProvider);
+VisTypesRegistryProvider.register(Timeline_hotels_with_indicators_Provider);
