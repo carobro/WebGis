@@ -12,16 +12,18 @@ function TracksProvider(Private) {
   const requestHandler = Private(RequestHandlerProvider);
 
   return VisFactory.createBaseVisualization({
-    name: 'esri-Tracks',
-    title: 'Esri Tracks',
+    name: 'tracks_hotels_with_indicators',
+    title: 'Tracks_hotels_with_indicators',
     icon: 'fa fa-map',
-    description: 'Esri Tracks',
+    description: 'tracks_hotels_with_indicators',
     category: CATEGORY.OTHER,
     visualization: TracksVisualization,
     responseHandler: handleResponse,
     requestHandler: requestHandler.handle,
     visConfig: {
       defaults: {
+		appField: 'app_id.keyword',
+        appValue: 'hotels_with_indicators',
         index: 'user_study_5',
         sessionField: 'session.keyword',
         timeField: 'timestamp',

@@ -55,14 +55,14 @@ export default class TracksVisualization {
       .then(([Map, SceneView, GraphicsLayer, Graphic]) => {
         if (!this.view) {
           const map = this.map = new Map({
-            basemap: 'dark-gray'
+            basemap: 'gray'
           });
           this.view = new SceneView({
             map,
             camera: {
               heading: 0,
               tilt: 0,
-              position: [7.6261347, 51.9606649, 20000]
+              position: [7.6261347, 51.9606649, 60000]
             },
             container: this.container,
             ui: { components: ['compass'] }
@@ -81,8 +81,8 @@ export default class TracksVisualization {
 
           let lineSymbol = {
             type: "simple-line",
-            color: [151, 255, 255],
-            width: 2
+            color: [0, 138, 230],
+            width: 1
           };
 
           return new Graphic({
@@ -94,6 +94,40 @@ export default class TracksVisualization {
 
 
         this.graphicsLayer = new GraphicsLayer();
+		
+        var hotels = [[848622.393214224, 6796729.379318867], [849183.7276407548, 6790735.641405604], [847399.4007616857, 6794679.314333653], [845389.3457834844, 6794012.281829031], [850639.6141638209, 6794958.190054057], [855539.9442740196, 6797092.455203246], [841921.8042853264, 6793535.406437839], [843584.3096505267, 6798140.737392016], [842737.5306965752, 6789544.5575313615], [847845.6739774196, 6785777.048066906], [852699.4252735218, 6788318.579257384]];
+        console.log(hotels);
+
+        var hotel_symbol = {
+          type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+          color: [128, 128, 128],
+          size: 12,
+          outline: {
+            color: [0,0,0],
+            width: 2,
+          }
+        };
+
+        for(var i = 0; i<hotels.length; i++){
+
+          var point = {
+            type: "point", // autocasts as new Point()
+            spatialReference: {wkid: 102100},
+            x: hotels[i][0],
+            y: hotels[i][1]
+          };
+
+          var pointGraphic = new Graphic({
+            geometry: point,
+            symbol: hotel_symbol
+          });
+
+          this.graphicsLayer.add(pointGraphic);
+          this.map.add(this.graphicsLayer);
+      
+        }
+
+		
         this.graphicsLayer.addMany(graphicTracks);
         this.map.add(this.graphicsLayer);
       })

@@ -7,8 +7,11 @@ const getRequestBody = (params, queryFilter, timeFilter) => {
           {
             'term': {
               [params.actionField]: params.actionValue
-            }
-          },
+            }},
+            {
+            'term': {
+              [params.appField]: params.appValue
+            }},
           {
             'range': {
               '@timestamp': {
