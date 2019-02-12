@@ -1,5 +1,6 @@
 import { loadCss, loadModules } from './libs/esri-loader';
-
+import { tooManyRequests } from 'boom';
+import { runInContext } from 'vm';
 const JS_API_URL = '//js.arcgis.com/4.8/';
 
 export default class TracksVisualization {
@@ -51,9 +52,9 @@ export default class TracksVisualization {
       'esri/views/SceneView',
       "esri/layers/GraphicsLayer",
       "esri/Graphic",
-      "esri/geometry/Point"
+      "esri/geometry/geometryEngine"
     ], { url: JS_API_URL })
-      .then(([Map, SceneView, GraphicsLayer, Graphic, Point]) => {
+      .then(([Map, SceneView, GraphicsLayer, Graphic, geometryEngine]) => {
         if (!this.view) {
           const map = this.map = new Map({
             basemap: 'dark-gray'
@@ -71,61 +72,77 @@ export default class TracksVisualization {
         } else {
           this.map.remove(this.graphicsLayer);
         }
-
-          var pointsymbol = {
-            type: "simple-point",
-            color: [151, 255, 255],
+        debugger
+        let graphicTracks = tracks.map(track => {
+          let polyline = {
+            type: "polyline",
+            spatialReference: {wkid: 102100},
+            paths: track.events.map(event => {
+              return [event.center.x, event.center.y]
+            })
           };
 
-          this.graphicsLayer = new GraphicsLayer();
-          var Graphicpoint = new Graphic({
-            geometry: point,
-            symbol: pointsymbol
-          });
-          this.graphicsLayer = new GraphicsLayer();
-          this.graphicsLayer.add(Graphicpoint);
-          this.map.add(this.graphicsLayer);
-        
-            // Algorithmus
-            dist = 0; // distance
-            pen = 0; // penalty
-            i = 1; // indice of points in P
-            j = 1; // indice of points in Q
-            P = event.mouseclick.x;
-            Q = event.mouseclick.y;
-            while(i <= P.length && j <= Q.length){
-              d = Point.distance(P[i+1], Q[j]);
-              while(i+1 <= P.length && Point.distance(P[i+1], Q[j]) < d){
-                pen = pen + Point.distance(P[i], P[i+1])
-                i = i+1;
-                d = Point.distance(P[i], Q[j]);
-              }
-              while(j+1 <= Q.length && Point.distance(P[i], Q[j+1]) < d){
-                pen = pen + Point.distance(Q[j], Q[j+1]);
-                j = j+1; 
-                d = Point.distance(P[i], Q[j]);
-              } 
-              dist = dist + d;
-              n = n + 1;
-              if((dist/n) > D){ // Woher bekomme ich die Distance threshold D?
-                return D*2;
-              }
-              pen = pen - (D - d);
-              i = i + 1; 
-              j = j + 1;
-            }
-            dist = dist / n;
-            while(i <= P.length){
-              pen = pen + Point.distance(P[i-1], P[i])
-            }
-            while(j <= Q.length){
-              pen = pen + Point.distance(Q[j-1], Q[j])
-            }
-            return dist + pen;
+          let lineSymbol = {
+            type: "simple-line",
+            color: [151, 255, 255],
+            width: 2
+          };
 
-        }) // hier muss then zu ")"
-        .catch(err => {
-          console.error(err);
-        });
-    }
+          return new Graphic({
+            geometry: polyline,
+            symbol: lineSymbol
+          });
+
+        })
+
+        this.graphicsLayer = new GraphicsLayer();
+        this.graphicsLayer.addMany(graphicTracks);
+        this.map.add(this.graphicsLayer);
+
+        routedistance(tracks) {
+          debugger
+          // Algorithmus
+          dist = 0; // distance
+          pen = 0; // penalty
+          n = 0; // number of corresponding points
+          i = 1; // indice of points in P
+          j = 1; // indice of points in Q
+          D = 1; // Distance treshold
+          P = graphicTracks;
+          Q = tracks;
+          while(i <= P.length && j <= Q.length){
+            d =  geometryEngine.distance(P[i+1], Q[j]);
+            while(i+1 <= P.length && geometryEngine.distance(P[i+1], Q[j]) < d){
+              pen = pen + geometryEngine.distance(P[i], P[i+1]);
+              i = i+1;
+              d = geometryEngine.distance(P[i], Q[j]);
+            }
+            while(j+1 <= Q.length && geometryEngine.distance(P[i], Q[j+1]) < d){
+              pen = pen + geometryEngine.distance(Q[j], Q[j+1]);
+              j = j+1; 
+              d = geometryEngine.distance(P[i], Q[j]);
+            } 
+            dist = dist + d;
+            n = n + 1;
+            if((dist/n) > D){
+              return D*2;
+            }
+            pen = pen - (D - d);
+            i = i + 1; 
+            j = j + 1;
+          }
+          dist = dist / n;
+          while(i <= P.length){
+            pen = pen + geometryEngine.distance(P[i-1], P[i]);
+          }
+          while(j <= Q.length){
+            pen = pen + geometryEngine.distance(Q[j-1], Q[j]);
+          }
+          return dist + pen;
+        }
+      })
+      .catch(err => {
+        console.error(err);
+      });
   }
+}
