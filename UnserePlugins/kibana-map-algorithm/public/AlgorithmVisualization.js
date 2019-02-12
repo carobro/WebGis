@@ -46,48 +46,6 @@ export default class TracksVisualization {
     this.renderMap(tracks);
   }
 
-  routedistance(tracks) {
-    debugger
-    // Algorithmus
-    dist = 0; // distance
-    pen = 0; // penalty
-    n = 0; // number of corresponding points
-    i = 1; // indice of points in P
-    j = 1; // indice of points in Q
-    D = 1; // Distance treshold
-    P = graphicTracks;
-    Q = tracks;
-    while(i <= P.length && j <= Q.length){
-      d =  geometryEngine.distance(P[i+1], Q[j]);
-      while(i+1 <= P.length && geometryEngine.distance(P[i+1], Q[j]) < d){
-        pen = pen + geometryEngine.distance(P[i], P[i+1]);
-        i = i+1;
-        d = geometryEngine.distance(P[i], Q[j]);
-      }
-      while(j+1 <= Q.length && geometryEngine.distance(P[i], Q[j+1]) < d){
-        pen = pen + geometryEngine.distance(Q[j], Q[j+1]);
-        j = j+1; 
-        d = geometryEngine.distance(P[i], Q[j]);
-      } 
-      dist = dist + d;
-      n = n + 1;
-      if((dist/n) > D){
-        return D*2;
-      }
-      pen = pen - (D - d);
-      i = i + 1; 
-      j = j + 1;
-    }
-    dist = dist / n;
-    while(i <= P.length){
-      pen = pen + geometryEngine.distance(P[i-1], P[i]);
-    }
-    while(j <= Q.length){
-      pen = pen + geometryEngine.distance(Q[j-1], Q[j]);
-    }
-    return dist + pen;
-  }
-
   renderMap(tracks) {
     loadModules([
       'esri/Map',
@@ -140,6 +98,48 @@ export default class TracksVisualization {
         this.graphicsLayer = new GraphicsLayer();
         this.graphicsLayer.addMany(graphicTracks);
         this.map.add(this.graphicsLayer);
+
+        routedistance(tracks) {
+          debugger
+          // Algorithmus
+          dist = 0; // distance
+          pen = 0; // penalty
+          n = 0; // number of corresponding points
+          i = 1; // indice of points in P
+          j = 1; // indice of points in Q
+          D = 1; // Distance treshold
+          P = graphicTracks;
+          Q = tracks;
+          while(i <= P.length && j <= Q.length){
+            d =  geometryEngine.distance(P[i+1], Q[j]);
+            while(i+1 <= P.length && geometryEngine.distance(P[i+1], Q[j]) < d){
+              pen = pen + geometryEngine.distance(P[i], P[i+1]);
+              i = i+1;
+              d = geometryEngine.distance(P[i], Q[j]);
+            }
+            while(j+1 <= Q.length && geometryEngine.distance(P[i], Q[j+1]) < d){
+              pen = pen + geometryEngine.distance(Q[j], Q[j+1]);
+              j = j+1; 
+              d = geometryEngine.distance(P[i], Q[j]);
+            } 
+            dist = dist + d;
+            n = n + 1;
+            if((dist/n) > D){
+              return D*2;
+            }
+            pen = pen - (D - d);
+            i = i + 1; 
+            j = j + 1;
+          }
+          dist = dist / n;
+          while(i <= P.length){
+            pen = pen + geometryEngine.distance(P[i-1], P[i]);
+          }
+          while(j <= Q.length){
+            pen = pen + geometryEngine.distance(Q[j-1], Q[j]);
+          }
+          return dist + pen;
+        }
       })
       .catch(err => {
         console.error(err);
