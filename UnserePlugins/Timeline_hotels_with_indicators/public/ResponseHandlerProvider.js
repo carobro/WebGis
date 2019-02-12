@@ -1,4 +1,4 @@
-const COLORS = [`green`,`red`];
+const COLORS = [`green`,`lightblue`];
 import vis from './libs/vis';
 
 export function handleResponse(kibana, response) {
