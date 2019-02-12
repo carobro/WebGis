@@ -1,5 +1,5 @@
 import './libs/vis.css';
-import './ItemSelected.css';
+import './Timeline_realestate_with_indicators.css';
 import vis from './libs/vis';
 
 const OPTIONS = {
@@ -10,7 +10,7 @@ const OPTIONS = {
   zoomKey: 'ctrlKey'
 };
 
-export default class ItemSelectedVisualization {
+export default class Timeline_realestate_with_indicators_Visualization {
   constructor(el, vis) {
     this.vis = vis;
     this.el = el;

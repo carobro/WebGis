@@ -2,7 +2,7 @@ export default function (kibana) {
   return new kibana.Plugin({
     uiExports: {
       visTypes: [
-        'plugins/itemselected/ItemSelectedProvider'
+        'plugins/timeline_realestate_with_indicators/Timeline_realestate_with_indicators_Provider'
       ]
     }
   });

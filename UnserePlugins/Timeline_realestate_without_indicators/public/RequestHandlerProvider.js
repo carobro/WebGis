@@ -15,6 +15,13 @@ const getRequestBody = (params, queryFilter, timeFilter) => {
               'message.keyword':'resultcenter ITEM_SELECTED'
             } 
           },
+        ],
+        'must': [
+          {
+            'term': {
+              [params.appField]: params.appValue
+            }
+          },
         ]
       }
     },

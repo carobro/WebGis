@@ -22,6 +22,8 @@ function Timeline_realestate_without_indicators_Provider(Private) {
     requestHandler: requestHandler.handle,
     visConfig: {
       defaults: {
+        appField: 'app_id.keyword',
+        appValue: 'realestate_without_indicators',
         sessionField: 'session.keyword',
         actionField: 'message',
         timeField: 'timestamp',

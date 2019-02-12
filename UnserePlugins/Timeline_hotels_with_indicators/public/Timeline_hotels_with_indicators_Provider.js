@@ -22,6 +22,8 @@ function Timeline_hotels_with_indicators_Provider(Private) {
     requestHandler: requestHandler.handle,
     visConfig: {
       defaults: {
+        appField: 'app_id.keyword',
+        appValue: 'hotels_with_indicators',
         sessionField: 'session.keyword',
         actionField: 'message',
         timeField: 'timestamp',
