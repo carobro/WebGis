@@ -1,4 +1,4 @@
-  export default class StackChartVisualization{
+  export default class StackChart_Visualization{
 
     constructor(el, vis) {
         this.vis = vis;
@@ -45,17 +45,17 @@
                 type: "stackedBar",
                 name: "Zoomlevel",
                 showInLegend: "true",
-                xValueFormatString: "DD, MMM",
-                yValueFormatString: "$#,##0",
-                dataPoints: [
-                    { x: new Date(2017, 0, 30), y: 56 },
-                    { x: new Date(2017, 0, 31), y: 45 },
-                    { x: new Date(2017, 1, 1), y: 71 },
-                    { x: new Date(2017, 1, 2), y: 41 },
-                    { x: new Date(2017, 1, 3), y: 60 },
-                    { x: new Date(2017, 1, 4), y: 75 },
-                    { x: new Date(2017, 1, 5), y: 98 }
-                ]
+                xValueFormatString: "",
+                yValueFormatString: "",
+                // dataPoints: [
+                //     { x: , y: },
+                //     { x: , y: },
+                //     { x: , y: },
+                //     { x: , y: },
+                //     { x: , y: },
+                //     { x: , y: },
+                //     { x: , y: }
+                // ]
             }]
         });
         chart.render();

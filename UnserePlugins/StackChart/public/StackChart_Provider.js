@@ -1,13 +1,13 @@
-import './index.html'
-import {StackChartVisualization } from './StackChart'
-import { RequestHandler } from './RequestHandler';
+import optionsTemplate from './options_template.html';
+import {StackChart_Visualization } from './StackChart_Visualization'
+import { RequestHandlerProvider } from './RequestHandler';
 import { handleResponse } from './ResponseHandler';
 
 import { CATEGORY } from 'ui/vis/vis_category';
 import { VisFactoryProvider } from 'ui/vis/vis_factory';
 import { VisTypesRegistryProvider } from 'ui/registry/vis_types';
 
-function StackChart(Private) {
+function StackChart_Provider(Private) {
     const VisFactory = Private(VisFactoryProvider);
     const requestHandler = Private(RequestHandlerProvider);
 
@@ -15,9 +15,9 @@ function StackChart(Private) {
         name: 'Stack-Chart',
         title: 'Stack-Chart',
         icon: 'fa fa-bars',
-        description: 'StackChart Visualization',
-        category: category.OTHER,
-        visualization: StackChartVisualization,
+        description: 'StackChart',
+        category: CATEGORY.OTHER,
+        visualization: StackChart_Visualization,
         responseHandler: handleResponse,
         requestHandler: requestHandler.handle,
         visConfig: {
@@ -27,10 +27,10 @@ function StackChart(Private) {
                 zoomField: 'map_zoom'
             },
         },
-    editorConfig: {
-        
-     }
-    });
+        editorConfig: {
+            optionsTemplate: optionsTemplate
+          }
+      });
 }
 
-VisTypesRegistryProvider.register(StackChart);
+VisTypesRegistryProvider.register(StackChart_Provider);
