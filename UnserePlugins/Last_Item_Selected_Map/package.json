@@ -1,0 +1,7 @@
+{
+  "name": "last_item_selected_map",
+  "version": "kibana",
+  "dependencies": {
+    "esri-loader": "^2.3.0"
+  }
+}
