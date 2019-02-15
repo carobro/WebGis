@@ -1,0 +1,7 @@
+{
+  "name": "items_timeline_realestate_indicators",
+  "version": "kibana",
+  "dependencies": {
+    "vis": "^4.21.0"
+  }
+}
